@@ -1,70 +1,90 @@
 <html>
-	<head>
-	<meta charset="UTF-8">
-		<title>Canon simulator</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-		<link rel="stylesheet" href="style.css">
-		
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-		
-		<!-- javascript files -->
-		<script src="js/Stats.js"></script>
-		<script src="main.js"></script>
-		<script src="lib.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projectile Simulation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
-		<!-- <style> body {padding: 0; margin: 0;} </style> -->
-	</head>
-	
-	<body onload="init();">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" defer></script>
 
-		<div id="wrapper" >
-			<div id="container" ></div>
-		<div id ="settings">
-			<div id="ballsettings">
-				<h3>Ball Properties</h3>
-					 <p>
-	    		Ball Velocity <br> <input type="number" id="initialVelocity" name="initialVelocity" min="0" max="500" value="50"><br><br>
-						Angle <br> <input type="number" id="angle" name="angle" min="0" max="359" value="45"><br><br>
+    <!-- javascript files -->
+    <script src="js/Stats.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="lib.js" defer></script>
 
-						Material <br><select name="material" id="material" onchange="updateBall(this);"> 
-										<option value="Golf">Golf ball</option>
-										<option value="Tennis">Tennis ball</option>
-										<option value="Billiard">Billiard ball</option>
-										<option value="Wooden">Wooden ball</option>
-										<option value="Steel">Steel ball</option>
-										<option value="Glas">Glas Marble</option>
-							 		 </select>
-							 	 <br>
-					 </p>
+    <!-- <style> body {padding: 0; margin: 0;} </style> -->
+  </head>
 
-			</div>
-				<p>wind<input type="checkbox" id="windCheck" onClick="showWind();">
-				</p>
-			<div id="windsettings" style="display:none" > <!-- style="display:none; -->
-				<h3>Wind Properties</h3>
-					<p>
-						Wind Velocity <br><input type="number" id="initialVelocity_wind" name="initialVelocity_wind"value="0"><br><br>
-						Angle<br><input type="number" id="angle_wind" name="angle_wind" value="180"><br><br>
-					</p>
-			 </div>
+  <body onload="init();">
+    <div id="wrapper">
+      <div id="container"></div>
+      <div id="settings">
+        <div id="ballsettings">
+          <h3>Ball Properties</h3>
+          <p>
+            Ball Velocity <br />
+            <input
+              type="number"
+              id="initialVelocity"
+              name="initialVelocity"
+              min="0"
+              max="500"
+              value="50" /><br /><br />
+            Angle <br />
+            <input
+              type="number"
+              id="angle"
+              name="angle"
+              min="0"
+              max="359"
+              value="45" /><br /><br />
 
-			<button onclick="clearish()" id="button">Clear</button>
-			<button onclick="launch()" id="button">Launch</button>
-			</div>
-		</div>
+            Material <br /><select
+              name="material"
+              id="material"
+              onchange="updateBall(this);">
+              <option value="Golf">Golf ball</option>
+              <option value="Tennis">Tennis ball</option>
+              <option value="Billiard">Billiard ball</option>
+              <option value="Wooden">Wooden ball</option>
+              <option value="Steel">Steel ball</option>
+              <option value="Glas">Glas Marble</option>
+            </select>
+            <br />
+          </p>
+        </div>
+        <p>
+          wind<input type="checkbox" id="windCheck" onClick="showWind();" />
+        </p>
+        <div id="windsettings" style="display: none">
+          <!-- style="display:none; -->
+          <h3>Wind Properties</h3>
+          <p>
+            Wind Velocity <br /><input
+              type="number"
+              id="initialVelocity_wind"
+              name="initialVelocity_wind"
+              value="0" /><br /><br />
+            Angle<br /><input
+              type="number"
+              id="angle_wind"
+              name="angle_wind"
+              value="180" /><br /><br />
+          </p>
+        </div>
 
+        <button onclick="clearish()" id="button">Clear</button>
+        <button onclick="launch()" id="button">Launch</button>
+      </div>
+    </div>
 
-	
-	<script type="text/javascript">
-        $(document).ready(function() {
-		   	$('select').on('change', function() {	
-	  			//alert( this.value );
-			});
-		});
-	</script>
-
-
-
-	</body>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("select").on("change", function () {
+          //alert( this.value );
+        });
+      });
+    </script>
+  </body>
 </html>
